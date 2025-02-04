@@ -1,12 +1,13 @@
-#!/bin/bash
+echo '#!/bin/bash
 
 test_calculate_slope() {
-    local x=2
-    local y=5
-    local b=1
-    local expected_m=2.00
+    read -p "Enter the value of x: " x
+    read -p "Enter the value of y: " y
+    read -p "Enter the value of b: " b
 
-    local m=$(echo "scale=2; ($y - $b) / $x" | bc)
+    local expected_m=$(echo "scale=2; ($y - $b) / $x" | bc)
+    local m=$(./calculate_slope.sh $x $y $b)
+
     if [ "$m" == "$expected_m" ]; then
         echo "Test passed!"
     else
@@ -15,4 +16,5 @@ test_calculate_slope() {
     fi
 }
 
-test_calculate_slope
+test_calculate_slope' > test_calculate_slope.sh
+chmod +x test_calculate_slope.sh
