@@ -8,6 +8,7 @@ test_calculate_slope() {
     local expected_m=$(echo "scale=2; ($y - $b) / $x" | bc)
     local m=$(./calculate_slope.sh $x $y $b)
 
+    echo "Calculated slope (m): $m"
     if [ "$m" == "$expected_m" ]; then
         echo "Test passed!"
     else
