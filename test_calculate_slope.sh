@@ -1,4 +1,4 @@
-echo '#!/bin/bash
+#!/bin/bash
 
 test_calculate_slope() {
     local x=2
@@ -15,5 +15,4 @@ test_calculate_slope() {
     fi
 }
 
-test_calculate_slope' > test_calculate_slope.sh
-chmod +x test_calculate_slope.sh
+test_calculate_slope
