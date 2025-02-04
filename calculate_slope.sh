@@ -1,9 +1,9 @@
 echo '#!/bin/bash
 
-read -p "value of x: " x 
-read -p "vlaue of y: " y
-read -p "value of b: " b
+x=$1
+y=$2
+b=$3
 
-m=$(echo "sacle=2; ($y - $b) / $x" | bc)
-echo "The value of m is: $m"' > calculate_slope.sh
+m=$(echo "scale=2; ($y - $b) / $x" | bc)
+echo $m' > calculate_slope.sh
 chmod +x calculate_slope.sh
